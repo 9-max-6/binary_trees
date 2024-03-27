@@ -32,6 +32,8 @@ static int recur_height(const binary_tree_t *tree)
 */
 static int binary_tree_h(const binary_tree_t *tree)
 {
+	if (!tree->left || !tree->right)
+		return (1);
 	return (recur_height(tree) - 1);
 }
 
@@ -52,5 +54,4 @@ int binary_tree_balance(const binary_tree_t *tree)
 	r_height = tree->right ? binary_tree_h(tree->right) : 0;
 
 	return (l_height - r_height);
-
 }

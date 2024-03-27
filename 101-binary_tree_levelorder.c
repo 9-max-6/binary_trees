@@ -58,10 +58,11 @@ size_t binary_tree_h(const binary_tree_t *tree)
 	return (recur_height(tree) - 1);
 }
 /**
- * binary_tree_inorder -  a function that goes through a
+ * binary_tree_i -  a function that goes through a
  * binary tree using inorder traversal
  * @func: is a pointer to a function to call for each node
  * @tree: is a pointer to the root node of the tree to traverse
+ * @depth: the current level
 */
 static void binary_tree_i(const binary_tree_t *tree, void (*func)(int),
 size_t depth)
@@ -90,8 +91,9 @@ void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 		return;
 	height = binary_tree_h(tree);
 	temp = tree;
-	for (iter = 0; iter < height; iter++)
+	for (iter = 0; iter <= height; iter++)
 	{
 		binary_tree_i((const binary_tree_t *)temp, func, iter);
+
 	}
 }

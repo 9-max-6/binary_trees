@@ -62,7 +62,7 @@ const binary_tree_t *second)
 			second_d = second_d->parent;
 		}
 	}
-	while(first_t && second_d)
+	while (first_t && second_d)
 	{
 		if (first_t == second_d)
 		{

@@ -25,14 +25,14 @@ static int binary_tree_s(const binary_tree_t *tree)
 */
 static bool is_complete(const binary_tree_t *root,
 int index, int total_nodes) {
-    if (root == NULL)
-        return true;
+	if (root == NULL)
+		return (true);
 
-    if (index >= total_nodes)
-        return false;
+	if (index >= total_nodes)
+		return (false);
 
-    return is_complete(root->left, 2 * index + 1, total_nodes) &&
-           is_complete(root->right, 2 * index + 2, total_nodes);
+	return (is_complete(root->left, 2 * index + 1, total_nodes) &&
+		   is_complete(root->right, 2 * index + 2, total_nodes));
 }
 /**
  * binary_tree_is_complete - a function that checks if a binary tree
@@ -43,13 +43,14 @@ int index, int total_nodes) {
 */
 int binary_tree_is_complete(const binary_tree_t *tree)
 {
-    int index, total_nodes;
-    if (!tree)
-        return (0);
-    index = 0;
-    total_nodes = binary_tree_s(tree);
-    if (is_complete(tree, index, total_nodes))
-        return (1);
-    else
-        return (0);
+	int index, total_nodes;
+
+	if (!tree)
+		return (0);
+	index = 0;
+	total_nodes = binary_tree_s(tree);
+	if (is_complete(tree, index, total_nodes))
+		return (1);
+	else
+		return (0);
 }

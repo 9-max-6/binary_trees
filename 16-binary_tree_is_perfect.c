@@ -31,11 +31,13 @@ static int l_pow(int a, int b)
  */
 static int recur_height(const binary_tree_t *tree)
 {
+	int l_height, r_height;
+
 	if (!tree)
 		return (0);
 
-	int l_height = recur_height(tree->left);
-	int r_height = recur_height(tree->right);
+	l_height = recur_height(tree->left);
+	r_height = recur_height(tree->right);
 
 	return (1 + (l_height > r_height ? l_height : r_height));
 }
